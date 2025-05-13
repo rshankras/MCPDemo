@@ -1,0 +1,25 @@
+{
+  "" : {
+    "const-values" : "/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/eventsource/build/EventSource.build/Release/EventSource.build/Objects-normal/arm64/EventSource-master.swiftconstvalues",
+    "dependencies" : "/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/eventsource/build/EventSource.build/Release/EventSource.build/Objects-normal/arm64/EventSource-master.d",
+    "diagnostics" : "/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/eventsource/build/EventSource.build/Release/EventSource.build/Objects-normal/arm64/EventSource-master.dia",
+    "emit-module-dependencies" : "/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/eventsource/build/EventSource.build/Release/EventSource.build/Objects-normal/arm64/EventSource-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/eventsource/build/EventSource.build/Release/EventSource.build/Objects-normal/arm64/EventSource-master-emit-module.dia",
+    "swift-dependencies" : "/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/eventsource/build/EventSource.build/Release/EventSource.build/Objects-normal/arm64/EventSource-master.swiftdeps"
+  },
+  "/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/eventsource/Sources/EventSource/AsyncEventsSequence.swift" : {
+    "index-unit-output-path" : "/EventSource.build/Release/EventSource.build/Objects-normal/arm64/AsyncEventsSequence.o",
+    "llvm-bc" : "/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/eventsource/build/EventSource.build/Release/EventSource.build/Objects-normal/arm64/AsyncEventsSequence.bc",
+    "object" : "/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/eventsource/build/EventSource.build/Release/EventSource.build/Objects-normal/arm64/AsyncEventsSequence.o"
+  },
+  "/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/eventsource/Sources/EventSource/AsyncSequence+Events.swift" : {
+    "index-unit-output-path" : "/EventSource.build/Release/EventSource.build/Objects-normal/arm64/AsyncSequence+Events.o",
+    "llvm-bc" : "/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/eventsource/build/EventSource.build/Release/EventSource.build/Objects-normal/arm64/AsyncSequence+Events.bc",
+    "object" : "/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/eventsource/build/EventSource.build/Release/EventSource.build/Objects-normal/arm64/AsyncSequence+Events.o"
+  },
+  "/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/eventsource/Sources/EventSource/EventSource.swift" : {
+    "index-unit-output-path" : "/EventSource.build/Release/EventSource.build/Objects-normal/arm64/EventSource.o",
+    "llvm-bc" : "/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/eventsource/build/EventSource.build/Release/EventSource.build/Objects-normal/arm64/EventSource.bc",
+    "object" : "/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/eventsource/build/EventSource.build/Release/EventSource.build/Objects-normal/arm64/EventSource.o"
+  }
+}

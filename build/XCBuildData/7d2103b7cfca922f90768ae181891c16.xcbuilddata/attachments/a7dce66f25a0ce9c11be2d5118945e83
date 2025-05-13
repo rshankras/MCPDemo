@@ -1,0 +1,75 @@
+{
+  "" : {
+    "const-values" : "/Users/rshankar/Work/Client/Upwork/MCPServer/MCPDemo/build/MCPDemo.build/Release/MCPDemo.build/Objects-normal/arm64/MCPDemo-master.swiftconstvalues",
+    "dependencies" : "/Users/rshankar/Work/Client/Upwork/MCPServer/MCPDemo/build/MCPDemo.build/Release/MCPDemo.build/Objects-normal/arm64/MCPDemo-master.d",
+    "diagnostics" : "/Users/rshankar/Work/Client/Upwork/MCPServer/MCPDemo/build/MCPDemo.build/Release/MCPDemo.build/Objects-normal/arm64/MCPDemo-master.dia",
+    "emit-module-dependencies" : "/Users/rshankar/Work/Client/Upwork/MCPServer/MCPDemo/build/MCPDemo.build/Release/MCPDemo.build/Objects-normal/arm64/MCPDemo-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/rshankar/Work/Client/Upwork/MCPServer/MCPDemo/build/MCPDemo.build/Release/MCPDemo.build/Objects-normal/arm64/MCPDemo-master-emit-module.dia",
+    "swift-dependencies" : "/Users/rshankar/Work/Client/Upwork/MCPServer/MCPDemo/build/MCPDemo.build/Release/MCPDemo.build/Objects-normal/arm64/MCPDemo-master.swiftdeps"
+  },
+  "/Users/rshankar/Work/Client/Upwork/MCPServer/MCPDemo/MCPDemo/ContentView.swift" : {
+    "index-unit-output-path" : "/MCPDemo.build/Release/MCPDemo.build/Objects-normal/arm64/ContentView.o",
+    "llvm-bc" : "/Users/rshankar/Work/Client/Upwork/MCPServer/MCPDemo/build/MCPDemo.build/Release/MCPDemo.build/Objects-normal/arm64/ContentView.bc",
+    "object" : "/Users/rshankar/Work/Client/Upwork/MCPServer/MCPDemo/build/MCPDemo.build/Release/MCPDemo.build/Objects-normal/arm64/ContentView.o"
+  },
+  "/Users/rshankar/Work/Client/Upwork/MCPServer/MCPDemo/MCPDemo/MCPDemoApp.swift" : {
+    "index-unit-output-path" : "/MCPDemo.build/Release/MCPDemo.build/Objects-normal/arm64/MCPDemoApp.o",
+    "llvm-bc" : "/Users/rshankar/Work/Client/Upwork/MCPServer/MCPDemo/build/MCPDemo.build/Release/MCPDemo.build/Objects-normal/arm64/MCPDemoApp.bc",
+    "object" : "/Users/rshankar/Work/Client/Upwork/MCPServer/MCPDemo/build/MCPDemo.build/Release/MCPDemo.build/Objects-normal/arm64/MCPDemoApp.o"
+  },
+  "/Users/rshankar/Work/Client/Upwork/MCPServer/MCPDemo/MCPDemo/Models/AppSettings.swift" : {
+    "index-unit-output-path" : "/MCPDemo.build/Release/MCPDemo.build/Objects-normal/arm64/AppSettings.o",
+    "llvm-bc" : "/Users/rshankar/Work/Client/Upwork/MCPServer/MCPDemo/build/MCPDemo.build/Release/MCPDemo.build/Objects-normal/arm64/AppSettings.bc",
+    "object" : "/Users/rshankar/Work/Client/Upwork/MCPServer/MCPDemo/build/MCPDemo.build/Release/MCPDemo.build/Objects-normal/arm64/AppSettings.o"
+  },
+  "/Users/rshankar/Work/Client/Upwork/MCPServer/MCPDemo/MCPDemo/Models/ChatMessage.swift" : {
+    "index-unit-output-path" : "/MCPDemo.build/Release/MCPDemo.build/Objects-normal/arm64/ChatMessage.o",
+    "llvm-bc" : "/Users/rshankar/Work/Client/Upwork/MCPServer/MCPDemo/build/MCPDemo.build/Release/MCPDemo.build/Objects-normal/arm64/ChatMessage.bc",
+    "object" : "/Users/rshankar/Work/Client/Upwork/MCPServer/MCPDemo/build/MCPDemo.build/Release/MCPDemo.build/Objects-normal/arm64/ChatMessage.o"
+  },
+  "/Users/rshankar/Work/Client/Upwork/MCPServer/MCPDemo/MCPDemo/Models/LLMService.swift" : {
+    "index-unit-output-path" : "/MCPDemo.build/Release/MCPDemo.build/Objects-normal/arm64/LLMService.o",
+    "llvm-bc" : "/Users/rshankar/Work/Client/Upwork/MCPServer/MCPDemo/build/MCPDemo.build/Release/MCPDemo.build/Objects-normal/arm64/LLMService.bc",
+    "object" : "/Users/rshankar/Work/Client/Upwork/MCPServer/MCPDemo/build/MCPDemo.build/Release/MCPDemo.build/Objects-normal/arm64/LLMService.o"
+  },
+  "/Users/rshankar/Work/Client/Upwork/MCPServer/MCPDemo/MCPDemo/Models/LLMServiceFactory.swift" : {
+    "index-unit-output-path" : "/MCPDemo.build/Release/MCPDemo.build/Objects-normal/arm64/LLMServiceFactory.o",
+    "llvm-bc" : "/Users/rshankar/Work/Client/Upwork/MCPServer/MCPDemo/build/MCPDemo.build/Release/MCPDemo.build/Objects-normal/arm64/LLMServiceFactory.bc",
+    "object" : "/Users/rshankar/Work/Client/Upwork/MCPServer/MCPDemo/build/MCPDemo.build/Release/MCPDemo.build/Objects-normal/arm64/LLMServiceFactory.o"
+  },
+  "/Users/rshankar/Work/Client/Upwork/MCPServer/MCPDemo/MCPDemo/Utils/Imports.swift" : {
+    "index-unit-output-path" : "/MCPDemo.build/Release/MCPDemo.build/Objects-normal/arm64/Imports.o",
+    "llvm-bc" : "/Users/rshankar/Work/Client/Upwork/MCPServer/MCPDemo/build/MCPDemo.build/Release/MCPDemo.build/Objects-normal/arm64/Imports.bc",
+    "object" : "/Users/rshankar/Work/Client/Upwork/MCPServer/MCPDemo/build/MCPDemo.build/Release/MCPDemo.build/Objects-normal/arm64/Imports.o"
+  },
+  "/Users/rshankar/Work/Client/Upwork/MCPServer/MCPDemo/MCPDemo/Utils/Logger.swift" : {
+    "index-unit-output-path" : "/MCPDemo.build/Release/MCPDemo.build/Objects-normal/arm64/Logger.o",
+    "llvm-bc" : "/Users/rshankar/Work/Client/Upwork/MCPServer/MCPDemo/build/MCPDemo.build/Release/MCPDemo.build/Objects-normal/arm64/Logger.bc",
+    "object" : "/Users/rshankar/Work/Client/Upwork/MCPServer/MCPDemo/build/MCPDemo.build/Release/MCPDemo.build/Objects-normal/arm64/Logger.o"
+  },
+  "/Users/rshankar/Work/Client/Upwork/MCPServer/MCPDemo/MCPDemo/Utils/MCPManager.swift" : {
+    "index-unit-output-path" : "/MCPDemo.build/Release/MCPDemo.build/Objects-normal/arm64/MCPManager.o",
+    "llvm-bc" : "/Users/rshankar/Work/Client/Upwork/MCPServer/MCPDemo/build/MCPDemo.build/Release/MCPDemo.build/Objects-normal/arm64/MCPManager.bc",
+    "object" : "/Users/rshankar/Work/Client/Upwork/MCPServer/MCPDemo/build/MCPDemo.build/Release/MCPDemo.build/Objects-normal/arm64/MCPManager.o"
+  },
+  "/Users/rshankar/Work/Client/Upwork/MCPServer/MCPDemo/MCPDemo/ViewModels/ChatViewModel.swift" : {
+    "index-unit-output-path" : "/MCPDemo.build/Release/MCPDemo.build/Objects-normal/arm64/ChatViewModel.o",
+    "llvm-bc" : "/Users/rshankar/Work/Client/Upwork/MCPServer/MCPDemo/build/MCPDemo.build/Release/MCPDemo.build/Objects-normal/arm64/ChatViewModel.bc",
+    "object" : "/Users/rshankar/Work/Client/Upwork/MCPServer/MCPDemo/build/MCPDemo.build/Release/MCPDemo.build/Objects-normal/arm64/ChatViewModel.o"
+  },
+  "/Users/rshankar/Work/Client/Upwork/MCPServer/MCPDemo/MCPDemo/Views/MessageBubbleView.swift" : {
+    "index-unit-output-path" : "/MCPDemo.build/Release/MCPDemo.build/Objects-normal/arm64/MessageBubbleView.o",
+    "llvm-bc" : "/Users/rshankar/Work/Client/Upwork/MCPServer/MCPDemo/build/MCPDemo.build/Release/MCPDemo.build/Objects-normal/arm64/MessageBubbleView.bc",
+    "object" : "/Users/rshankar/Work/Client/Upwork/MCPServer/MCPDemo/build/MCPDemo.build/Release/MCPDemo.build/Objects-normal/arm64/MessageBubbleView.o"
+  },
+  "/Users/rshankar/Work/Client/Upwork/MCPServer/MCPDemo/MCPDemo/Views/SettingsView.swift" : {
+    "index-unit-output-path" : "/MCPDemo.build/Release/MCPDemo.build/Objects-normal/arm64/SettingsView.o",
+    "llvm-bc" : "/Users/rshankar/Work/Client/Upwork/MCPServer/MCPDemo/build/MCPDemo.build/Release/MCPDemo.build/Objects-normal/arm64/SettingsView.bc",
+    "object" : "/Users/rshankar/Work/Client/Upwork/MCPServer/MCPDemo/build/MCPDemo.build/Release/MCPDemo.build/Objects-normal/arm64/SettingsView.o"
+  },
+  "/Users/rshankar/Work/Client/Upwork/MCPServer/MCPDemo/build/MCPDemo.build/Release/MCPDemo.build/DerivedSources/GeneratedAssetSymbols.swift" : {
+    "index-unit-output-path" : "/MCPDemo.build/Release/MCPDemo.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "llvm-bc" : "/Users/rshankar/Work/Client/Upwork/MCPServer/MCPDemo/build/MCPDemo.build/Release/MCPDemo.build/Objects-normal/arm64/GeneratedAssetSymbols.bc",
+    "object" : "/Users/rshankar/Work/Client/Upwork/MCPServer/MCPDemo/build/MCPDemo.build/Release/MCPDemo.build/Objects-normal/arm64/GeneratedAssetSymbols.o"
+  }
+}

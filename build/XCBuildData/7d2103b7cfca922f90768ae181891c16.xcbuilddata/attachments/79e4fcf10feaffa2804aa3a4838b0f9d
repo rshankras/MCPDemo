@@ -1,0 +1,95 @@
+{
+  "" : {
+    "const-values" : "/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/build/mcp-swift-sdk.build/Release/MCP.build/Objects-normal/arm64/MCP-master.swiftconstvalues",
+    "dependencies" : "/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/build/mcp-swift-sdk.build/Release/MCP.build/Objects-normal/arm64/MCP-master.d",
+    "diagnostics" : "/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/build/mcp-swift-sdk.build/Release/MCP.build/Objects-normal/arm64/MCP-master.dia",
+    "emit-module-dependencies" : "/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/build/mcp-swift-sdk.build/Release/MCP.build/Objects-normal/arm64/MCP-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/build/mcp-swift-sdk.build/Release/MCP.build/Objects-normal/arm64/MCP-master-emit-module.dia",
+    "swift-dependencies" : "/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/build/mcp-swift-sdk.build/Release/MCP.build/Objects-normal/arm64/MCP-master.swiftdeps"
+  },
+  "/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/Sources/MCP/Base/Error.swift" : {
+    "index-unit-output-path" : "/mcp-swift-sdk.build/Release/MCP.build/Objects-normal/arm64/Error.o",
+    "llvm-bc" : "/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/build/mcp-swift-sdk.build/Release/MCP.build/Objects-normal/arm64/Error.bc",
+    "object" : "/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/build/mcp-swift-sdk.build/Release/MCP.build/Objects-normal/arm64/Error.o"
+  },
+  "/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/Sources/MCP/Base/ID.swift" : {
+    "index-unit-output-path" : "/mcp-swift-sdk.build/Release/MCP.build/Objects-normal/arm64/ID.o",
+    "llvm-bc" : "/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/build/mcp-swift-sdk.build/Release/MCP.build/Objects-normal/arm64/ID.bc",
+    "object" : "/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/build/mcp-swift-sdk.build/Release/MCP.build/Objects-normal/arm64/ID.o"
+  },
+  "/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/Sources/MCP/Base/Lifecycle.swift" : {
+    "index-unit-output-path" : "/mcp-swift-sdk.build/Release/MCP.build/Objects-normal/arm64/Lifecycle.o",
+    "llvm-bc" : "/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/build/mcp-swift-sdk.build/Release/MCP.build/Objects-normal/arm64/Lifecycle.bc",
+    "object" : "/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/build/mcp-swift-sdk.build/Release/MCP.build/Objects-normal/arm64/Lifecycle.o"
+  },
+  "/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/Sources/MCP/Base/Messages.swift" : {
+    "index-unit-output-path" : "/mcp-swift-sdk.build/Release/MCP.build/Objects-normal/arm64/Messages.o",
+    "llvm-bc" : "/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/build/mcp-swift-sdk.build/Release/MCP.build/Objects-normal/arm64/Messages.bc",
+    "object" : "/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/build/mcp-swift-sdk.build/Release/MCP.build/Objects-normal/arm64/Messages.o"
+  },
+  "/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/Sources/MCP/Base/Transport.swift" : {
+    "index-unit-output-path" : "/mcp-swift-sdk.build/Release/MCP.build/Objects-normal/arm64/Transport.o",
+    "llvm-bc" : "/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/build/mcp-swift-sdk.build/Release/MCP.build/Objects-normal/arm64/Transport.bc",
+    "object" : "/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/build/mcp-swift-sdk.build/Release/MCP.build/Objects-normal/arm64/Transport.o"
+  },
+  "/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/Sources/MCP/Base/Transports/HTTPClientTransport.swift" : {
+    "index-unit-output-path" : "/mcp-swift-sdk.build/Release/MCP.build/Objects-normal/arm64/HTTPClientTransport.o",
+    "llvm-bc" : "/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/build/mcp-swift-sdk.build/Release/MCP.build/Objects-normal/arm64/HTTPClientTransport.bc",
+    "object" : "/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/build/mcp-swift-sdk.build/Release/MCP.build/Objects-normal/arm64/HTTPClientTransport.o"
+  },
+  "/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/Sources/MCP/Base/Transports/NetworkTransport.swift" : {
+    "index-unit-output-path" : "/mcp-swift-sdk.build/Release/MCP.build/Objects-normal/arm64/NetworkTransport.o",
+    "llvm-bc" : "/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/build/mcp-swift-sdk.build/Release/MCP.build/Objects-normal/arm64/NetworkTransport.bc",
+    "object" : "/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/build/mcp-swift-sdk.build/Release/MCP.build/Objects-normal/arm64/NetworkTransport.o"
+  },
+  "/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/Sources/MCP/Base/Transports/StdioTransport.swift" : {
+    "index-unit-output-path" : "/mcp-swift-sdk.build/Release/MCP.build/Objects-normal/arm64/StdioTransport.o",
+    "llvm-bc" : "/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/build/mcp-swift-sdk.build/Release/MCP.build/Objects-normal/arm64/StdioTransport.bc",
+    "object" : "/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/build/mcp-swift-sdk.build/Release/MCP.build/Objects-normal/arm64/StdioTransport.o"
+  },
+  "/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/Sources/MCP/Base/Utilities/Ping.swift" : {
+    "index-unit-output-path" : "/mcp-swift-sdk.build/Release/MCP.build/Objects-normal/arm64/Ping.o",
+    "llvm-bc" : "/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/build/mcp-swift-sdk.build/Release/MCP.build/Objects-normal/arm64/Ping.bc",
+    "object" : "/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/build/mcp-swift-sdk.build/Release/MCP.build/Objects-normal/arm64/Ping.o"
+  },
+  "/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/Sources/MCP/Base/Value.swift" : {
+    "index-unit-output-path" : "/mcp-swift-sdk.build/Release/MCP.build/Objects-normal/arm64/Value.o",
+    "llvm-bc" : "/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/build/mcp-swift-sdk.build/Release/MCP.build/Objects-normal/arm64/Value.bc",
+    "object" : "/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/build/mcp-swift-sdk.build/Release/MCP.build/Objects-normal/arm64/Value.o"
+  },
+  "/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/Sources/MCP/Base/Versioning.swift" : {
+    "index-unit-output-path" : "/mcp-swift-sdk.build/Release/MCP.build/Objects-normal/arm64/Versioning.o",
+    "llvm-bc" : "/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/build/mcp-swift-sdk.build/Release/MCP.build/Objects-normal/arm64/Versioning.bc",
+    "object" : "/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/build/mcp-swift-sdk.build/Release/MCP.build/Objects-normal/arm64/Versioning.o"
+  },
+  "/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/Sources/MCP/Client/Client.swift" : {
+    "index-unit-output-path" : "/mcp-swift-sdk.build/Release/MCP.build/Objects-normal/arm64/Client.o",
+    "llvm-bc" : "/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/build/mcp-swift-sdk.build/Release/MCP.build/Objects-normal/arm64/Client.bc",
+    "object" : "/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/build/mcp-swift-sdk.build/Release/MCP.build/Objects-normal/arm64/Client.o"
+  },
+  "/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/Sources/MCP/Extensions/Data+Extensions.swift" : {
+    "index-unit-output-path" : "/mcp-swift-sdk.build/Release/MCP.build/Objects-normal/arm64/Data+Extensions.o",
+    "llvm-bc" : "/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/build/mcp-swift-sdk.build/Release/MCP.build/Objects-normal/arm64/Data+Extensions.bc",
+    "object" : "/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/build/mcp-swift-sdk.build/Release/MCP.build/Objects-normal/arm64/Data+Extensions.o"
+  },
+  "/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/Sources/MCP/Server/Prompts.swift" : {
+    "index-unit-output-path" : "/mcp-swift-sdk.build/Release/MCP.build/Objects-normal/arm64/Prompts.o",
+    "llvm-bc" : "/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/build/mcp-swift-sdk.build/Release/MCP.build/Objects-normal/arm64/Prompts.bc",
+    "object" : "/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/build/mcp-swift-sdk.build/Release/MCP.build/Objects-normal/arm64/Prompts.o"
+  },
+  "/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/Sources/MCP/Server/Resources.swift" : {
+    "index-unit-output-path" : "/mcp-swift-sdk.build/Release/MCP.build/Objects-normal/arm64/Resources.o",
+    "llvm-bc" : "/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/build/mcp-swift-sdk.build/Release/MCP.build/Objects-normal/arm64/Resources.bc",
+    "object" : "/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/build/mcp-swift-sdk.build/Release/MCP.build/Objects-normal/arm64/Resources.o"
+  },
+  "/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/Sources/MCP/Server/Server.swift" : {
+    "index-unit-output-path" : "/mcp-swift-sdk.build/Release/MCP.build/Objects-normal/arm64/Server.o",
+    "llvm-bc" : "/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/build/mcp-swift-sdk.build/Release/MCP.build/Objects-normal/arm64/Server.bc",
+    "object" : "/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/build/mcp-swift-sdk.build/Release/MCP.build/Objects-normal/arm64/Server.o"
+  },
+  "/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/Sources/MCP/Server/Tools.swift" : {
+    "index-unit-output-path" : "/mcp-swift-sdk.build/Release/MCP.build/Objects-normal/arm64/Tools.o",
+    "llvm-bc" : "/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/build/mcp-swift-sdk.build/Release/MCP.build/Objects-normal/arm64/Tools.bc",
+    "object" : "/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/build/mcp-swift-sdk.build/Release/MCP.build/Objects-normal/arm64/Tools.o"
+  }
+}

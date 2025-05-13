@@ -1,0 +1,17 @@
+/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/Sources/MCP/Base/Error.swift
+/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/Sources/MCP/Base/ID.swift
+/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/Sources/MCP/Base/Lifecycle.swift
+/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/Sources/MCP/Base/Messages.swift
+/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/Sources/MCP/Base/Transport.swift
+/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/Sources/MCP/Base/Transports/HTTPClientTransport.swift
+/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/Sources/MCP/Base/Transports/NetworkTransport.swift
+/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/Sources/MCP/Base/Transports/StdioTransport.swift
+/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/Sources/MCP/Base/Utilities/Ping.swift
+/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/Sources/MCP/Base/Value.swift
+/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/Sources/MCP/Base/Versioning.swift
+/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/Sources/MCP/Client/Client.swift
+/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/Sources/MCP/Extensions/Data+Extensions.swift
+/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/Sources/MCP/Server/Prompts.swift
+/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/Sources/MCP/Server/Resources.swift
+/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/Sources/MCP/Server/Server.swift
+/Users/rshankar/Library/Developer/Xcode/DerivedData/MCPDemo-fweiffxtfsrnhcdjriwprcidqcyy/SourcePackages/checkouts/swift-sdk/Sources/MCP/Server/Tools.swift

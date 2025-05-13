@@ -1,0 +1,24 @@
+{
+  "name": "mcpserver",
+  "version": "1.0.0",
+  "description": "MCP Server Demo for MCPDemo Mac Application",
+  "main": "server.js",
+  "scripts": {
+    "start": "node get-paths.js",
+    "docs": "node server.js",
+    "db": "node database-server.js",
+    "test": "echo '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"initialize\"}' | node server.js"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "llm",
+    "demo"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.10.0",
+    "better-sqlite3": "^9.0.0"
+  }
+}
