@@ -141,6 +141,43 @@ const result = await connection.callTool('query', {
         return this.createResponse(id, this.resources);
       }
       
+      // Handle tools/list according to MCP specification
+      if (method === 'tools/list') {
+        console.log("Handling tools/list method");
+        return this.createResponse(id, {
+          tools: [
+            {
+              name: 'searchDocumentation',
+              description: 'Search through the documentation for specific terms',
+              inputSchema: {
+                type: 'object',
+                required: ['query'],
+                properties: {
+                  query: {
+                    type: 'string',
+                    description: 'Search term to find in the documentation'
+                  }
+                }
+              }
+            },
+            {
+              name: 'getDocumentationSummary',
+              description: 'Get a summary of all available documentation',
+              inputSchema: {
+                type: 'object',
+                properties: {
+                  format: {
+                    type: 'string',
+                    description: 'Format of the summary (brief or detailed)'
+                  }
+                }
+              }
+            }
+          ],
+          nextCursor: null
+        });
+      }
+      
       switch (method) {
         case 'initialize':
           return this.createResponse(id, {
@@ -149,6 +186,10 @@ const result = await connection.callTool('query', {
             capabilities: {
               resources: {
                 supportedContentTypes: ['text/markdown']
+              },
+              tools: {
+                supported: true,
+                listChanged: false
               }
             }
           });
@@ -168,6 +209,63 @@ const result = await connection.callTool('query', {
             text: content 
           }]);
         
+        // Legacy tools method (keeping for compatibility)
+        case 'tools':
+          return this.createResponse(id, [
+            {
+              name: 'searchDocumentation',
+              description: 'Search through the documentation for specific terms',
+              parameters: {
+                type: 'object',
+                required: ['query'],
+                properties: {
+                  query: {
+                    type: 'string',
+                    description: 'Search term to find in the documentation'
+                  }
+                }
+              }
+            },
+            {
+              name: 'getDocumentationSummary',
+              description: 'Get a summary of all available documentation',
+              parameters: {
+                type: 'object',
+                properties: {
+                  format: {
+                    type: 'string',
+                    description: 'Format of the summary (brief or detailed)'
+                  }
+                }
+              }
+            }
+          ]);
+        
+        case 'searchDocumentation':
+          if (!params || !params.query) {
+            throw new Error('Search query is required');
+          }
+          
+          const searchResults = await this.searchDocs(params.query);
+          return this.createResponse(id, {
+            content: [{ 
+              type: 'text', 
+              text: searchResults 
+            }],
+            isError: false
+          });
+        
+        case 'getDocumentationSummary':
+          const format = params?.format || 'brief';
+          const summary = await this.getDocsSummary(format);
+          return this.createResponse(id, {
+            content: [{ 
+              type: 'text', 
+              text: summary 
+            }],
+            isError: false
+          });
+        
         default:
           throw new Error(`Unsupported method: ${method}`);
       }
@@ -184,6 +282,86 @@ const result = await connection.callTool('query', {
       return fs.readFileSync(resourcePath, 'utf8');
     } catch (error) {
       throw new Error(`Failed to read resource: ${error.message}`);
+    }
+  }
+
+  // Search through documentation resources
+  async searchDocs(query) {
+    const results = [];
+    const searchTerm = query.toLowerCase();
+    
+    for (const resource of this.resources) {
+      try {
+        const content = await this.readResourceContent(resource.uri);
+        if (content.toLowerCase().includes(searchTerm)) {
+          results.push(`Found "${query}" in ${resource.name} (${resource.uri})`);
+          
+          // Extract context around the match
+          const lines = content.split('\n');
+          let contextFound = false;
+          
+          for (let i = 0; i < lines.length; i++) {
+            if (lines[i].toLowerCase().includes(searchTerm)) {
+              const start = Math.max(0, i - 2);
+              const end = Math.min(lines.length - 1, i + 2);
+              results.push("\nContext:");
+              for (let j = start; j <= end; j++) {
+                results.push(`${j === i ? '> ' : '  '}${lines[j]}`);
+              }
+              results.push("");
+              contextFound = true;
+              break;
+            }
+          }
+          
+          if (!contextFound) {
+            // If we couldn't extract context by lines, just show the first occurrence
+            const index = content.toLowerCase().indexOf(searchTerm);
+            const start = Math.max(0, index - 50);
+            const end = Math.min(content.length, index + searchTerm.length + 50);
+            results.push("\nContext:");
+            results.push(`...${content.substring(start, end)}...`);
+            results.push("");
+          }
+        }
+      } catch (error) {
+        console.error(`Error searching ${resource.uri}: ${error.message}`);
+      }
+    }
+    
+    if (results.length === 0) {
+      return `No results found for "${query}"`;
+    }
+    
+    return `Search results for "${query}":\n\n${results.join('\n')}`;
+  }
+  
+  // Get a summary of all documentation
+  async getDocsSummary(format) {
+    const summaries = [];
+    
+    for (const resource of this.resources) {
+      try {
+        const content = await this.readResourceContent(resource.uri);
+        const title = resource.name;
+        
+        if (format === 'detailed') {
+          // For detailed format, include first paragraph
+          const firstParagraph = content.split('\n\n')[0].replace(/^#+ /, '');
+          summaries.push(`## ${title}\n${firstParagraph}\n`);
+        } else {
+          // For brief format, just list the resource
+          summaries.push(`- ${title}: ${resource.description}`);
+        }
+      } catch (error) {
+        console.error(`Error summarizing ${resource.uri}: ${error.message}`);
+      }
+    }
+    
+    if (format === 'detailed') {
+      return `# Documentation Summary\n\n${summaries.join('\n')}`;
+    } else {
+      return `Available Documentation:\n\n${summaries.join('\n')}`;
     }
   }
 

@@ -193,6 +193,37 @@ class MCPIntegrationViewModel: ObservableObject {
             
             // Make sure the SQL query is properly formatted as a string
             return ToolCall(name: "executeQuery", arguments: ["sql": sqlQuery as Any])
+        case "searchDocumentation":
+            // Look for the query parameter in the response
+            let queryPattern = #"(?:search|find|look for)(?:.+?)(?:in|through|within|about)(?:.+?)["'](.+?)["']"#
+            guard let regex = try? NSRegularExpression(pattern: queryPattern, options: [.dotMatchesLineSeparators, .caseInsensitive]) else {
+                return nil
+            }
+            
+            let nsString = response as NSString
+            let matches = regex.matches(in: response, options: [], range: NSRange(location: 0, length: nsString.length))
+            
+            guard let match = matches.first else {
+                return nil
+            }
+            
+            let searchQuery = nsString.substring(with: match.range(at: 1))
+            Logger.info("Extracted search query: \(searchQuery)")
+            
+            return ToolCall(name: "searchDocumentation", arguments: ["query": searchQuery])
+
+        case "getDocumentationSummary":
+            // Check if detailed format is requested
+            let formatPattern = #"(?:detailed|comprehensive|full|in-depth|complete)"#
+            let formatRegex = try? NSRegularExpression(pattern: formatPattern, options: [.caseInsensitive])
+            
+            let nsString = response as NSString
+            let formatMatches = formatRegex?.matches(in: response, options: [], range: NSRange(location: 0, length: nsString.length))
+            
+            // If detailed format is requested, pass "detailed", otherwise use "brief"
+            let format = formatMatches?.isEmpty == false ? "detailed" : "brief"
+            
+            return ToolCall(name: "getDocumentationSummary", arguments: ["format": format])
             
         default:
             // For other tools, attempt to parse arguments based on the response context
