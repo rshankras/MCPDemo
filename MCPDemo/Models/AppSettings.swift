@@ -9,9 +9,10 @@ import Foundation
 import SwiftUI
 
 class AppSettings: ObservableObject {
-    @Published var currentProvider: LLMProvider = .anthropic
-    @Published var anthropicAPIKey: String = ""
-    @Published var openAIAPIKey: String = ""
+    @Published var selectedProvider: LLMProvider = .anthropic
+    
+    // Dictionary to store API keys in memory
+    private var apiKeys: [LLMProvider: String] = [:]
     
     private let keychainService = "com.mcpdemo.apikeys"
     private let anthropicKey = "anthropicAPIKey"
@@ -19,119 +20,85 @@ class AppSettings: ObservableObject {
     private let providerKey = "currentProvider"
     
     init() {
-        #if DEBUG
-        print("Initializing AppSettings")
-        #endif
+        Logger.info("Initializing AppSettings")
         loadSettings()
     }
     
-    func saveSettings() {
-        #if DEBUG
-        print("Saving settings to keychain and UserDefaults")
-        #endif
-        
-        // Save API keys to keychain
-        if !anthropicAPIKey.isEmpty {
-            #if DEBUG
-            print("Saving Anthropic API key to keychain")
-            #endif
-            setKeychainValue(anthropicAPIKey, forKey: anthropicKey)
-        }
-        
-        if !openAIAPIKey.isEmpty {
-            #if DEBUG
-            print("Saving OpenAI API key to keychain")
-            #endif
-            setKeychainValue(openAIAPIKey, forKey: openAIKey)
-        }
-        
-        // Save provider preference to UserDefaults
-        #if DEBUG
-        print("Saving provider preference: \(currentProvider.rawValue)")
-        #endif
-        UserDefaults.standard.setValue(currentProvider.rawValue, forKey: providerKey)
-        
-        #if DEBUG
-        print("Settings saved successfully")
-        #endif
+    // Get API key for specific provider
+    func getAPIKey(for provider: LLMProvider) -> String? {
+        return apiKeys[provider]
     }
     
+    // Set API key for specific provider
+    func setAPIKey(_ key: String, for provider: LLMProvider) {
+        apiKeys[provider] = key
+    }
+    
+    // Load settings from storage
     func loadSettings() {
-        #if DEBUG
-        print("Loading settings from keychain and UserDefaults")
-        #endif
+        Logger.info("Loading settings from keychain and UserDefaults")
         
         // Load API keys from keychain
-        if let anthropicKey = getKeychainValue(forKey: anthropicKey) {
-            self.anthropicAPIKey = anthropicKey
-            #if DEBUG
-            print("Loaded Anthropic API key from keychain")
-            #endif
+        if let anthropicKey = KeychainManager.shared.getAPIKey(for: .anthropic) {
+            apiKeys[.anthropic] = anthropicKey
+            Logger.info("Loaded Anthropic API key from keychain")
         } else {
-            #if DEBUG
-            print("No Anthropic API key found in keychain")
-            #endif
+            Logger.info("No Anthropic API key found in keychain")
         }
         
-        if let openAIKey = getKeychainValue(forKey: openAIKey) {
-            self.openAIAPIKey = openAIKey
-            #if DEBUG
-            print("Loaded OpenAI API key from keychain")
-            #endif
+        if let openaiKey = KeychainManager.shared.getAPIKey(for: .openai) {
+            apiKeys[.openai] = openaiKey
+            Logger.info("Loaded OpenAI API key from keychain")
         } else {
-            #if DEBUG
-            print("No OpenAI API key found in keychain")
-            #endif
+            Logger.info("No OpenAI API key found in keychain")
         }
         
-        // Load provider preference from UserDefaults
-        if let providerValue = UserDefaults.standard.string(forKey: providerKey),
-           let provider = LLMProvider(rawValue: providerValue) {
-            self.currentProvider = provider
-            #if DEBUG
-            print("Loaded provider preference: \(provider.rawValue)")
-            #endif
-        } else {
-            #if DEBUG
-            print("No provider preference found, using default: \(currentProvider.rawValue)")
-            #endif
+        // Load selected provider from UserDefaults
+        if let providerString = UserDefaults.standard.string(forKey: "selectedProvider"),
+           let provider = LLMProvider(rawValue: providerString) {
+            selectedProvider = provider
+            Logger.info("Loaded provider preference: \(providerString)")
         }
         
-        #if DEBUG
-        print("Settings loaded successfully")
-        #endif
+        Logger.info("Settings loaded successfully")
     }
     
-    func getCurrentLLMService() -> LLMService? {
-        #if DEBUG
-        print("Getting LLM service for provider: \(currentProvider.rawValue)")
-        #endif
+    // Save settings to storage
+    func saveSettings() {
+        Logger.info("Saving settings to keychain and UserDefaults")
         
-        switch currentProvider {
-        case .anthropic:
-            guard !anthropicAPIKey.isEmpty else {
-                #if DEBUG
-                print("Anthropic API key not set")
-                #endif
-                return nil
+        // Save API keys to keychain
+        if let anthropicKey = apiKeys[.anthropic] {
+            let success = KeychainManager.shared.saveAPIKey(anthropicKey, for: .anthropic)
+            if success {
+                Logger.info("Saving Anthropic API key to keychain")
+            } else {
+                Logger.error("Failed to save Anthropic API key to keychain")
             }
-            #if DEBUG
-            print("Creating Anthropic service")
-            #endif
-            return AnthropicService(apiKey: anthropicAPIKey)
-        case .openAI:
-            guard !openAIAPIKey.isEmpty else {
-                #if DEBUG
-                print("OpenAI API key not set")
-                #endif
-                return nil
-            }
-            #if DEBUG
-            print("OpenAI service not yet implemented")
-            #endif
-            // Will be implemented later
-            return nil
         }
+        
+        if let openaiKey = apiKeys[.openai] {
+            let success = KeychainManager.shared.saveAPIKey(openaiKey, for: .openai)
+            if success {
+                Logger.info("Saving OpenAI API key to keychain")
+            } else {
+                Logger.error("Failed to save OpenAI API key to keychain")
+            }
+        }
+        
+        // Save selected provider to UserDefaults
+        UserDefaults.standard.set(selectedProvider.rawValue, forKey: "selectedProvider")
+        Logger.info("Saving provider preference: \(selectedProvider.rawValue)")
+        
+        Logger.info("Settings saved successfully")
+    }
+    
+    // Create and return appropriate LLM service
+    func getCurrentLLMService() -> LLMService? {
+        if let apiKey = getAPIKey(for: selectedProvider), !apiKey.isEmpty {
+            return LLMServiceFactory.createService(provider: selectedProvider, apiKey: apiKey)
+        }
+        return nil
     }
     
     // MARK: - Keychain Helper Methods

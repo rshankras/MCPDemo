@@ -16,6 +16,7 @@ struct ContentView: View {
     @State private var mcpServerName = ""
     @State private var mcpServerPath = ""
     @State private var mcpServerArgs = ""
+    @State private var connectedServers: [String] = []
     
     var body: some View {
         VStack(spacing: 0) {
@@ -25,6 +26,14 @@ struct ContentView: View {
                     .font(.headline)
                 Spacer()
                 
+                // MCP toggle
+                if !connectedServers.isEmpty {
+                    Toggle("Use MCP", isOn: $viewModel.useMCP)
+                        .toggleStyle(.switch)
+                        .fixedSize()
+                        .padding(.trailing, 8)
+                }
+                
                 // MCP button
                 Button(action: {
                     showingMCPConnector.toggle()
@@ -32,13 +41,18 @@ struct ContentView: View {
                     HStack(spacing: 4) {
                         Image(systemName: "network")
                             .font(.system(size: 16))
+                        if !connectedServers.isEmpty {
+                            Text("\(connectedServers.count)")
+                                .font(.caption)
+                                .padding(3)
+                                .background(Circle().fill(Color.green))
+                                .foregroundColor(.white)
+                        }
                     }
                 }
                 .padding(.horizontal, 4)
                 .buttonStyle(.borderless)
 
-
-                
                 // Settings button
                 Button(action: {
                     showingSettings.toggle()
@@ -114,6 +128,75 @@ struct ContentView: View {
         .sheet(isPresented: $showingSettings) {
             SettingsView(settings: settings)
         }
+        .sheet(isPresented: $showingMCPConnector) {
+            MCPConnectorView(
+                mcpServerName: $mcpServerName,
+                mcpServerPath: $mcpServerPath,
+                mcpServerArgs: $mcpServerArgs,
+                connectedServers: connectedServers,
+                connectServer: { name, path, args in
+                    Task {
+                        do {
+                            // Create/update MCP configuration
+                            var config = try MCPConfig.load()
+                            let resolvedPath = resolveExecutablePath(path)
+                            let server = MCPConfig.Server(
+                                command: resolvedPath,
+                                args: args.split(separator: " ").map(String.init),
+                                env: nil
+                            )
+                            config.servers["default"] = server
+                            try config.save()
+                            
+                            // Connect to the server
+                            try await MCPClient.shared.connect()
+                            
+                            // Update connected servers list on the main thread
+                            await MainActor.run {
+                                if !connectedServers.contains(name) {
+                                    connectedServers.append(name)
+                                }
+                            }
+                        } catch {
+                            viewModel.error = "Failed to connect: \(error.localizedDescription)"
+                        }
+                    }
+                },
+                disconnectServer: { name in
+                    Task {
+                        await MCPClient.shared.disconnect()
+                        if let index = connectedServers.firstIndex(of: name) {
+                            connectedServers.remove(at: index)
+                        }
+                        if connectedServers.isEmpty {
+                            viewModel.useMCP = false
+                        }
+                    }
+                },
+                getResources: { serverName in
+                    return Task {
+                        // This would be implemented to return resources
+                        // from the specified server
+                        return MCPClient.shared.availableTools.map { $0.name }
+                    }
+                },
+                dismiss: { showingMCPConnector = false }
+            )
+        }
+    }
+    
+    /// Resolves relative paths to absolute paths
+    private func resolveExecutablePath(_ path: String) -> String {
+        if path.hasPrefix("/") {
+            // Already an absolute path
+            return path
+        }
+        
+        // Get the app's working directory
+        let currentDirectory = FileManager.default.currentDirectoryPath
+        
+        // Combine the current directory with the relative path
+        return URL(fileURLWithPath: currentDirectory).appendingPathComponent(path).path
     }
 }
 
@@ -125,6 +208,7 @@ struct MCPConnectorView: View {
     let connectServer: (String, String, String) -> Void
     let disconnectServer: (String) -> Void
     let getResources: (String) -> Task<[String], Never>
+    let dismiss: () -> Void
     
     @State private var selectedServer: String? = nil
     @State private var resources: [String] = []
@@ -148,8 +232,17 @@ struct MCPConnectorView: View {
     
     var body: some View {
         VStack(spacing: 16) {
-            Text("MCP Server Connection")
-                .font(.headline)
+            // Add a header with a dismiss button
+            HStack {
+                Text("MCP Server Connection")
+                    .font(.headline)
+                Spacer()
+                Button(action: dismiss) {
+                    Image(systemName: "xmark.circle.fill")
+                        .foregroundColor(.gray)
+                }
+            }
+            .padding(.bottom, 8)
             
             Form {
                 Section(header: Text("Server Presets")) {
@@ -288,6 +381,7 @@ struct MCPConnectorView: View {
                 }
             }
         }
+        .padding()
         .onAppear {
             validateServerFiles()
         }

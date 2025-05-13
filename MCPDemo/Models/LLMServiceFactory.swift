@@ -8,19 +8,26 @@
 import Foundation
 
 enum LLMProvider: String {
-    case anthropic
-    case openAI
-    // Add more providers as needed
+    case anthropic = "anthropic"
+    case openai = "openai"
+    // Add other providers as needed
 }
 
 class LLMServiceFactory {
-    static func createService(provider: LLMProvider, apiKey: String) -> LLMService {
+    static func createService(provider: LLMProvider, apiKey: String = "") -> LLMService {
+        var key = apiKey
+        
+        // If no key is provided, try to get it from the keychain
+        if key.isEmpty {
+            key = KeychainManager.shared.getAPIKey(for: provider) ?? ""
+        }
+        
         switch provider {
         case .anthropic:
-            return AnthropicService(apiKey: apiKey)
-        case .openAI:
-            // This will be implemented later
-            fatalError("OpenAI service not yet implemented")
+            return AnthropicService(apiKey: key)
+        case .openai:
+            // Implement OpenAI service if needed
+            return AnthropicService(apiKey: key) // Placeholder, replace with actual OpenAI service
         }
     }
 } 

@@ -1,13 +1,6 @@
-//
-//  ChatViewModel.swift
-//  MCPDemo
-//
-//  Created by Ravi Shankar on 11/05/25.
-//
-
 import Foundation
 import SwiftUI
-// import MCP  // Temporarily disabled until module linking is fixed
+import MCP  // Import MCP
 
 @MainActor
 class ChatViewModel: ObservableObject {
@@ -15,14 +8,20 @@ class ChatViewModel: ObservableObject {
     @Published var inputMessage: String = ""
     @Published var isProcessing = false
     @Published var error: String? = nil
+    @Published var useMCP = false  // Toggle for using MCP
     
     private let settings = AppSettings()
+    private let mcpIntegration = MCPIntegrationViewModel.shared
+    
     
     init() {
-        #if DEBUG
-        print("ChatViewModel initialized")
-        #endif
-    }
+         #if DEBUG
+         print("ChatViewModel initialized")
+         #endif
+         
+         // Set self as the chat view model for MCP integration
+         mcpIntegration.setViewModel(self)
+     }
 
     /// Resolves relative paths to absolute paths
     private func resolveExecutablePath(_ path: String) -> String {
@@ -49,15 +48,10 @@ class ChatViewModel: ObservableObject {
         return resolvedPath
     }
     
-    
-
-    
     func sendMessage() {
         guard !inputMessage.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { return }
         
-        #if DEBUG
-        print("User sending message: \"\(inputMessage.prefix(20))...\"")
-        #endif
+        Logger.info("User sending message: \"\(inputMessage.prefix(50))...\"")
         
         let userMessage = ChatMessage(content: inputMessage, isUser: true)
         messages.append(userMessage)
@@ -65,8 +59,48 @@ class ChatViewModel: ObservableObject {
         inputMessage = ""
         
         Task {
-            await sendToLLM(prompt: userPrompt)
+            if useMCP && MCPClient.shared.isConnected {
+                // Use MCP integration if enabled and connected
+                Logger.info("Using MCP integration for message processing")
+                isProcessing = true
+                do {
+                    try await mcpIntegration.processQuery(userPrompt)
+                } catch {
+                    Logger.error("MCP integration error: \(error.localizedDescription)")
+                    self.error = "MCP Error: \(error.localizedDescription)"
+                    let errorMessage = ChatMessage(content: "Error: \(error.localizedDescription)", isUser: false, isSystem: true)
+                    messages.append(errorMessage)
+                }
+                isProcessing = false
+            } else {
+                await sendToLLM(prompt: userPrompt)
+            }
         }
+    }
+    
+    private func sendWithMCP(prompt: String) async {
+        isProcessing = true
+        error = nil
+        
+        #if DEBUG
+        print("Processing message with MCP integration")
+        #endif
+        
+        do {
+            // Use MCP integration
+            try await mcpIntegration.processQuery(prompt)
+            
+            // For simplicity, we're not displaying intermediate results yet
+            // In a full implementation, you'd want to show the tool results in the chat
+            
+        } catch {
+            self.error = "MCP Error: \(error.localizedDescription)"
+            #if DEBUG
+            print("MCP error: \(error.localizedDescription)")
+            #endif
+        }
+        
+        isProcessing = false
     }
     
     private func sendToLLM(prompt: String) async {
@@ -169,5 +203,5 @@ class ChatViewModel: ObservableObject {
         }
         
         return table
-    } 
-} 
+    }
+}
